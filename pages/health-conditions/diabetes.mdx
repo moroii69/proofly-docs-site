@@ -4,16 +4,26 @@
 The diabetes management module provides comprehensive analysis of diabetes-related health metrics.
 
 ```python py filename="diabetes.py"  copy
-# Diabetes analysis example
 from proofly import HealthAnalyzer
 from proofly.models import DiabetesMetrics
 
 analyzer = HealthAnalyzer()
-metrics = DiabetesMetrics(
+
+diabetes_metrics = DiabetesMetrics(
     blood_glucose=120,
     hba1c=6.5,
     blood_pressure=130
 )
+
+result = analyzer.analyze_metrics(
+    condition="diabetes",
+    metrics=diabetes_metrics
+)
+
+analysis = result.get_detailed_analysis()
+print(f"Health Score: {analysis['health_score']}")
+print(f"Risk Level: {analysis['risk_level']}")
+
 ```
 
 ## Metrics

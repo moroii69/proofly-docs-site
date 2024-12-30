@@ -7,12 +7,17 @@ The hypertension management module provides comprehensive analysis of hypertensi
 ### Hypertension
 
 ```python py filename="diabetes.py"  copy
-# Hypertension analysis example
-metrics = HypertensionMetrics(
+from proofly import HealthAnalyzer
+from proofly.models import HypertensionMetrics
+
+analyzer = HealthAnalyzer()
+hypertension_metrics = HypertensionMetrics(
     systolic_pressure=130,
     diastolic_pressure=85,
     heart_rate=72
 )
+result = analyzer.analyze_metrics("hypertension", hypertension_metrics)
+print(f"Health Score: {result.health_score}")
 ```
 
 #Metrics

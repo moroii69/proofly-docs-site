@@ -5,11 +5,15 @@ The COPD management module provides comprehensive analysis of COPD-related healt
 
 ```python py filename="copd.py"  copy
 # COPD analysis example
-metrics = COPDMetrics(
+from proofly.models import COPDMetrics
+
+copd_metrics = COPDMetrics(
     oxygen_saturation=95,
     peak_flow=350,
     respiratory_rate=18
 )
+result = analyzer.analyze_metrics("copd", copd_metrics)
+print(f"Health Score: {result.health_score}")
 ```
 
 ## Metrics

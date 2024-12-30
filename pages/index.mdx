@@ -1,11 +1,38 @@
-# Introduction
- 
-Welcome to Nextra! This is a basic docs template. You can use it as a starting point for your own project :)
+# Welcome to Proofly
 
-## What is Nextra?
+Enterprise-grade health metrics analysis and prediction engine for healthcare applications.
 
-A **simple**, **powerful** and **flexible** site generation framework with everything you love from Next.js.
+## Overview
 
-## Documentation
+Proofly empowers healthcare applications with advanced analytics and predictive capabilities, focusing on chronic conditions including diabetes, hypertension, COPD, and more.
 
-The documentation is available at [https://nextra.site](https://nextra.site).
+## Key Features
+
+- Comprehensive health scoring with evidence-based algorithms
+- Multi-factor risk stratification
+- Time-series health data processing
+- Smart clinical recommendations
+- HIPAA-compliant data handling
+- Extensive error handling and validation
+- Export capabilities for reports and analysis
+
+## Quick Example
+
+```python py filename="analyze.py"  copy
+from proofly import HealthAnalyzer
+from proofly.models import DiabetesMetrics
+
+# Initialize analyzer
+analyzer = HealthAnalyzer()
+
+# Create metrics
+metrics = DiabetesMetrics(
+    blood_glucose=120,
+    hba1c=6.5,
+    blood_pressure=130
+)
+
+# Analyze metrics
+result = analyzer.analyze_metrics("diabetes", metrics)
+print(f"Health Score: {result.health_score}")
+```

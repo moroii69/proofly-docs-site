@@ -1,0 +1,27 @@
+# Exporting Data
+
+## Export Formats
+
+- PDF Reports
+- CSV Data
+- JSON Format
+- Excel Spreadsheets
+
+## Example Usage
+
+```python py filename="diabetes.py" {14} copy
+from proofly import HealthAnalyzer
+from proofly.export import ReportGenerator
+from proofly.enums import ReportFormat
+
+# Create report
+report = ReportGenerator.create_report(
+    analysis_result,
+    format=ReportFormat.PDF,
+    include_graphs=True,
+    include_recommendations=True
+)
+
+# Save report
+report.save("health_analysis.pdf")
+```

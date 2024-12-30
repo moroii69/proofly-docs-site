@@ -1,0 +1,206 @@
+# Contributing to Proofly
+
+Thank you for your interest in contributing to Proofly! This document provides guidelines and instructions for contributing to the project.
+
+## Development Setup
+
+1. Fork and clone the repository:
+```bash
+git clone https://github.com/moroii69/proofly.git
+cd proofly-lib
+```
+
+2. Create a virtual environment:
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+3. Install development dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+## Code Style
+
+We follow PEP 8 guidelines with these specific requirements:
+
+- Line length maximum: 88 characters
+- Use type hints for all function parameters
+- Include docstrings for all classes and functions
+- Use f-strings for string formatting
+
+Example of properly formatted code:
+
+```python
+def analyze_health_metrics(
+    metrics: HealthMetrics,
+    threshold: float = 0.5
+) -> AnalysisResult:
+    """
+    Analyze health metrics and return results.
+
+    Args:
+        metrics: Health metrics to analyze
+        threshold: Analysis threshold value
+
+    Returns:
+        AnalysisResult containing analysis outcome
+    """
+    return AnalysisResult(
+        score=calculate_score(metrics),
+        confidence=calculate_confidence(metrics, threshold)
+    )
+```
+
+## Testing
+
+We use pytest for testing. All new code should include tests:
+
+```python
+# tests/test_analyzer.py
+def test_health_analyzer():
+    metrics = DiabetesMetrics(
+        blood_glucose=120,
+        hba1c=6.5,
+        blood_pressure=130
+    )
+    
+    analyzer = HealthAnalyzer()
+    result = analyzer.analyze_metrics("diabetes", metrics)
+    
+    assert result.health_score >= 0
+    assert result.health_score <= 100
+    assert isinstance(result.recommendations, list)
+```
+
+To run tests:
+```bash
+pytest
+pytest --cov=proofly tests/  # For coverage
+```
+
+## Pull Request Process
+
+1. Create a new branch for your feature:
+```bash
+git checkout -b feature/your-feature-name
+```
+
+2. Make your changes and commit them:
+```bash
+git add .
+git commit -m "feat: add new feature"
+```
+
+We follow conventional commits:
+- `feat:` for new features
+- `fix:` for bug fixes
+- `docs:` for documentation
+- `test:` for adding tests
+- `refactor:` for code refactoring
+
+3. Push your changes:
+```bash
+git push origin feature/your-feature-name
+```
+
+4. Open a Pull Request with:
+   - Clear description of changes
+   - Link to related issue
+   - Screenshots/examples if relevant
+   - Test results
+
+## Documentation
+
+When adding new features, please update:
+
+1. API documentation
+2. Usage examples
+3. Docstrings
+4. README.md if necessary
+
+Example of good documentation:
+
+```python
+class HealthAnalyzer:
+    """
+    Main class for analyzing health metrics.
+    
+    Attributes:
+        config (Dict): Configuration parameters
+        models (Dict): Loaded prediction models
+    
+    Example:
+        analyzer = HealthAnalyzer()
+        result = analyzer.analyze_metrics(metrics)
+    """
+```
+
+## Code Review Process
+
+All submissions require review. We expect:
+
+1. No failing tests
+2. Code coverage ≥90%
+3. Proper documentation
+4. Clean commit history
+
+## Development Workflow
+
+1. Check existing issues/create new issue
+2. Discuss approach in issue
+3. Fork repository
+4. Create feature branch
+5. Write code and tests
+6. Submit PR
+7. Address review comments
+8. Merge after approval
+
+## Environment Setup Tips
+
+Recommended VS Code settings:
+
+```json
+{
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.formatting.provider": "black",
+    "editor.formatOnSave": true,
+    "editor.rulers": [88],
+    "python.testing.pytestEnabled": true
+}
+```
+
+## Release Process
+
+1. Update version in `setup.py`
+2. Update CHANGELOG.md
+3. Create release branch
+4. Run full test suite
+5. Create GitHub release
+6. Publish to PyPI
+
+## Getting Help
+
+- GitHub Issues: Bug reports and feature requests
+- Discussions: Questions and ideas
+- Email: support@proofly.xyz
+
+## Code of Conduct
+
+We follow the [Contributor Covenant](https://www.contributor-covenant.org/). Key points:
+
+- Be respectful and inclusive
+- No harassment or discrimination
+- Focus on constructive feedback
+- Report violations to maintainers
+
+## Recognition
+
+Contributors will be added to:
+1. CONTRIBUTORS.md file
+2. GitHub contributors page
+3. Release notes for significant contributions
+
+Thank you for contributing to Proofly!

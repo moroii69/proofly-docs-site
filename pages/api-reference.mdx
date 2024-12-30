@@ -1,0 +1,27 @@
+# API Reference
+
+## HealthAnalyzer Class
+
+Core class for analyzing health metrics and generating predictions.
+
+```python py filename="specific-condition.py"  copy
+class HealthAnalyzer:
+    def analyze_metrics(
+        self,
+        condition: str,
+        metrics: BaseMetrics,
+        include_recommendations: bool = True
+    ) -> AnalysisResult:
+        """
+        Analyze health metrics for a specific condition.
+        
+        Args:
+            condition: Health condition to analyze
+            metrics: Health metrics to analyze
+            include_recommendations: Whether to include recommendations
+            
+        Returns:
+            AnalysisResult object containing health score and recommendations
+        """
+        pass
+```

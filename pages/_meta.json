@@ -1,7 +1,14 @@
 {
   "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
+  "getting-started": "Getting Started",
+  "features": "Features",
+  "installation": "Installation",
+  "usage": "Usage Guide",
+  "api-reference": "API Reference",
+  "health-conditions": "Health Conditions",
+  "export": "Exporting Data",
+  "error-handling": "Error Handling",
+  "contributing": "Contributing",
   "about": {
     "title": "About",
     "type": "page"
@@ -9,7 +16,7 @@
   "contact": {
     "title": "Contact ↗",
     "type": "page",
-    "href": "https://twitter.com/shuding_",
+    "href": "https://linkedin.com/in/ufraaan",
     "newWindow": true
   }
 }

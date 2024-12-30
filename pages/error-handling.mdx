@@ -1,0 +1,35 @@
+# Error Handling
+
+## Exception Types
+
+```python py filename="exceptions.py" {2,3,4} copy
+from proofly.exceptions import (
+    ValidationError,
+    ConfigurationError,
+    AnalysisError
+)
+```
+
+## Handling Errors
+
+```python py filename="error-handling.py" {5} copy
+try:
+    result = analyzer.analyze_metrics(
+        condition="diabetes",
+        metrics=DiabetesMetrics(
+            blood_glucose=500,  # Above normal range
+            hba1c=6.5,
+            blood_pressure=130
+        )
+    )
+except ValidationError as e:
+    print(f"Validation Error: {e.message}")
+except ConfigurationError as e:
+    print(f"Configuration Error: {e.message}")
+```
+
+## Common Error Scenarios
+
+- ValidationError: Invalid metric values
+- ConfigurationError: Missing API key or configuration
+- AnalysisError: Analysis engine failures

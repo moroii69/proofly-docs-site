@@ -1,0 +1,16 @@
+## First Analysis
+
+```python py filename="analyze.py"  copy
+from proofly import HealthAnalyzer
+analyzer = HealthAnalyzer()
+
+# Your first analysis
+result = analyzer.analyze_metrics(
+    condition="diabetes",
+    metrics=DiabetesMetrics(
+        blood_glucose=120,
+        hba1c=6.5,
+        blood_pressure=130
+    )
+)
+```

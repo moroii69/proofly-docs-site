@@ -1,7 +1,7 @@
 {
-  "name": "nextra-docs-template",
-  "version": "0.0.1",
-  "description": "Nextra docs template",
+  "name": "proofly-docs",
+  "version": "1.0.1",
+  "description": "Documentation for proofly",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shuding/nextra-docs-template.git"
+    "url": "git+https://github.com/moroii69/proofly-docs-site.git"
   },
-  "author": "Shu Ding <g@shud.in>",
+  "author": "Mohammed ufraan>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shuding/nextra-docs-template/issues"
+    "url": "https://github.com/moroii69/proofly-docs-site/issues"
   },
-  "homepage": "https://github.com/shuding/nextra-docs-template#readme",
+  "homepage": "https://github.com/moroii69/proofly-docs-site",
   "dependencies": {
     "next": "^13.0.6",
     "nextra": "latest",

@@ -6,7 +6,7 @@ The hypertension management module provides comprehensive analysis of hypertensi
 
 ### Hypertension
 
-```python py filename="diabetes.py"  copy
+```python py filename="diabetes.py" {2, 5-9, 11} copy
 from proofly import HealthAnalyzer
 from proofly.models import HypertensionMetrics
 
@@ -16,6 +16,7 @@ hypertension_metrics = HypertensionMetrics(
     diastolic_pressure=85,
     heart_rate=72
 )
+
 result = analyzer.analyze_metrics("hypertension", hypertension_metrics)
 print(f"Health Score: {result.health_score}")
 ```

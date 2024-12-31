@@ -9,14 +9,21 @@
   "export": "Exporting Data",
   "error-handling": "Error Handling",
   "contributing": "Contributing",
+  "system-health": "System Health",
   "about": {
     "title": "About",
     "type": "page"
   },
+  "version": {
+    "title": "Latest Version: 1.2.4",
+    "type": "page",
+    "href": "https://pypi.org/project/proofly/1.2.4/",
+    "newWindow": true
+  },
   "contact": {
     "title": "Contact ↗",
     "type": "page",
-    "href": "https://linkedin.com/in/ufraaan",
+    "href": "mailto:kurosen930@gmail.com",
     "newWindow": true
   }
 }
